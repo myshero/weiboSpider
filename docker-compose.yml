@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  weibo:
+    image: weibo_spider:latest
+    container_name: weibo_spider_python
+    user: "root:root"
+    volumes:
+      - ./weibo/:/app/weibo/
+      - ./config.json:/app/config.json
+      - ./all.log:/app/all.log
+      - ./error.log:/app/error.log
+#      - ./user_id_list.txt:/app/weibo_spider/user_id_list.txt
